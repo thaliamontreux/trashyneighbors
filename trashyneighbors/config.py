@@ -1,12 +1,14 @@
 import configparser
 from pathlib import Path
+from urllib.parse import quote
 
 
 def load_site_config():
     cfg_path = Path("siteconfig.cfg").resolve()
     if not cfg_path.is_file():
         raise RuntimeError(
-            "Missing required siteconfig.cfg. Run scripts/generate_siteconfig.py"
+            "Missing required siteconfig.cfg. Run "
+            "scripts/generate_siteconfig.py"
         )
 
     parser = configparser.ConfigParser()
@@ -31,8 +33,12 @@ def load_site_config():
     if not db_user or db_password is None or not db_name:
         raise RuntimeError("[database] user, password, name are required")
 
+    db_user_quoted = quote(db_user, safe="")
+    db_password_quoted = quote(db_password, safe="")
+
     sqlalchemy_uri = (
-        f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+        f"mysql+pymysql://{db_user_quoted}:{db_password_quoted}"
+        f"@{db_host}:{db_port}/{db_name}"
         "?charset=utf8mb4"
     )
 
