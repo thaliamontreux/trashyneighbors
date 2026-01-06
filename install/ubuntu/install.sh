@@ -128,7 +128,7 @@ generate_siteconfig() {
     return
   fi
 
-  "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/generate_siteconfig.py" \
+  PYTHONPATH="${APP_ROOT}" "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/generate_siteconfig.py" \
     --db-host "${DB_HOST}" \
     --db-port "${DB_PORT}" \
     --db-user "${DB_USER}" \
@@ -146,7 +146,7 @@ generate_siteconfig() {
 }
 
 init_app_tables() {
-  "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/init_app_db.py"
+  PYTHONPATH="${APP_ROOT}" "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/init_app_db.py"
 }
 
 import_seed_sql() {
@@ -163,7 +163,7 @@ import_seed_sql() {
     exit 1
   fi
 
-  "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/bootstrap_db.py" \
+  PYTHONPATH="${APP_ROOT}" "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/bootstrap_db.py" \
     --host "${DB_HOST}" \
     --port "${DB_PORT}" \
     --user "${DB_USER}" \
@@ -179,7 +179,7 @@ create_initial_admin() {
     return
   fi
 
-  "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/create_admin.py" \
+  PYTHONPATH="${APP_ROOT}" "${APP_ROOT}/venv/bin/python" "${APP_ROOT}/scripts/create_admin.py" \
     --email "${ADMIN_EMAIL}" \
     --screen-name "${ADMIN_SCREEN_NAME}" \
     --password "${ADMIN_PASSWORD}"
