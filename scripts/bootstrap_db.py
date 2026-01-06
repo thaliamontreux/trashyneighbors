@@ -57,7 +57,12 @@ def _run_sql_file(conn, sql_path: Path):
             s = stmt.strip()
             if not s:
                 continue
-            cur.execute(s)
+            try:
+                cur.execute(s)
+            except pymysql.err.IntegrityError as e:
+                if e.args and e.args[0] == 1062:
+                    continue
+                raise
 
 
 def main():
