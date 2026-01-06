@@ -1,0 +1,213 @@
+{"record_type":"META","version":"1.0","project":"TrashyNeighbors","notes":"Seed/import file only. Used during install to populate MariaDB reference tables. Application must not read this file at runtime."}
+
+{"record_type":"REFERENCE_TABLE","table":"ref_vehicle_color","key_fields":["color_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_vehicle_type","key_fields":["type_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_vehicle_condition","key_fields":["condition_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_vehicle_make","key_fields":["make_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_nuisance_category","key_fields":["category_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_nuisance_item","key_fields":["category_name","item_name"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_zip_city","key_fields":["zip5","city","state"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_email_template","key_fields":["template_key"],"mode":"upsert"}
+{"record_type":"REFERENCE_TABLE","table":"ref_user_submitted_vehicle_model_status","key_fields":["status_key"],"mode":"upsert"}
+
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Black"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"White"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Gray"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Silver"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Red"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Blue"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Green"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Yellow"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Orange"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Brown"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Purple"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Pink"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Matte (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Metallic (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Two-tone (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Faded (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Rusted (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Primer (Modifier)"}}
+{"record_type":"SEED","table":"ref_vehicle_color","row":{"color_name":"Peeling Paint (Modifier)"}}
+
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Sedan"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Coupe"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Hatchback"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Wagon"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"SUV"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Crossover"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Pickup Truck"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Van (Cargo)"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Van (Passenger)"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Minivan"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Box Truck"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Semi-Truck"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Motorcycle"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Scooter"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"RV (Class A)"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"RV (Class B)"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"RV (Class C)"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Camper Trailer"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Fifth Wheel"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"Boat"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"ATV"}}
+{"record_type":"SEED","table":"ref_vehicle_type","row":{"type_name":"UTV"}}
+
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Operational"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Non-Operational"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Abandoned"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Wrecked"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Burned"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Stripped"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Missing Parts"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"On Blocks"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Flat Tires"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Overgrown Around Vehicle"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Filled With Trash"}}
+{"record_type":"SEED","table":"ref_vehicle_condition","row":{"condition_name":"Rodent Infested"}}
+
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Ford"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Chevrolet"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"GMC"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Dodge"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Chrysler"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Jeep"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Cadillac"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Buick"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Lincoln"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Tesla"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Toyota"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Honda"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Nissan"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Mazda"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Subaru"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Mitsubishi"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Lexus"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Acura"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Infiniti"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Hyundai"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Kia"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Genesis"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"BMW"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Mercedes-Benz"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Audi"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Volkswagen"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Porsche"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Volvo"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"MINI"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Fiat"}}
+{"record_type":"SEED","table":"ref_vehicle_make","row":{"make_name":"Alfa Romeo"}}
+
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Appliances"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Vehicles & Vehicle-Related"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Scrap & Metal"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Construction & Demolition Debris"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Furniture & Household Junk"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Outdoor & Yard Waste"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Trash & Refuse"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Hazardous / Environmental"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Tents / Temporary Structures"}}
+{"record_type":"SEED","table":"ref_nuisance_category","row":{"category_name":"Animals & Related Nuisances"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Refrigerator / Freezer"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Washer"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Dryer"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Dishwasher"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Oven / Stove"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Microwave"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Water Heater"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Furnace / HVAC Unit"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Dehumidifier"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Air Conditioner (Window or Split)"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Appliances","item_name":"Vending Machine"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Derelict Vehicle"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Non-operational vehicle"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Vehicle without plates"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Vehicle on blocks / missing wheels"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Burned vehicle"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Wrecked vehicle"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Abandoned RV"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Abandoned camper"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Boat on trailer"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"ATV / UTV"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Dirt bike / Motorcycle storage"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Vehicles & Vehicle-Related","item_name":"Trailer (utility / cargo)"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Scrap metal piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Sheet metal"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Rebar"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Pipes"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Copper wire"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Engine blocks"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Car parts piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Rims / wheels"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Scrap & Metal","item_name":"Exhaust pipes"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Lumber / wood piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Plywood sheets"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Broken pallets"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Drywall"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Concrete chunks"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Bricks"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Cinder blocks"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Roofing shingles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Windows"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Doors"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Cabinets"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Construction & Demolition Debris","item_name":"Toilets / sinks / tubs"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Mattresses"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Couches / sofas"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Chairs"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Dressers"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Tables"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Rugs / carpets"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Furniture & Household Junk","item_name":"Exercise equipment"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Overgrown weeds"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Dead trees"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Fallen branches"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Grass clippings piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Leaves piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Dirt piles"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Outdoor & Yard Waste","item_name":"Gravel piles"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Loose garbage bags"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Overflowing trash cans"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Dumped household trash"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Food waste / rotten food"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Used diapers"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Broken glass"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Trash & Refuse","item_name":"Tires (mosquito hazard)"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"Oil drums"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"Fuel containers"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"Propane tanks"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"Paint cans"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"Batteries (car/industrial)"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Hazardous / Environmental","item_name":"E-waste piles"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Tents / Temporary Structures","item_name":"Camping tents"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Tents / Temporary Structures","item_name":"Tarps (ground or vehicle-covered)"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Tents / Temporary Structures","item_name":"Makeshift shelters"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Tents / Temporary Structures","item_name":"Storage canopies"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Tents / Temporary Structures","item_name":"Collapsed carports"}}
+
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Animals & Related Nuisances","item_name":"Excessive dog kennels"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Animals & Related Nuisances","item_name":"Animal feces accumulation"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Animals & Related Nuisances","item_name":"Dead animals"}}
+{"record_type":"SEED","table":"ref_nuisance_item","row":{"category_name":"Animals & Related Nuisances","item_name":"Infestations (rats, roaches, raccoons)"}}
+
+{"record_type":"SEED","table":"ref_user_submitted_vehicle_model_status","row":{"status_key":"PENDING","status_label":"Pending Admin Review"}}
+{"record_type":"SEED","table":"ref_user_submitted_vehicle_model_status","row":{"status_key":"APPROVED","status_label":"Approved (Merged into Canonical Models)"}}
+{"record_type":"SEED","table":"ref_user_submitted_vehicle_model_status","row":{"status_key":"REJECTED","status_label":"Rejected"}}
+
+{"record_type":"SEED","table":"ref_email_template","row":{"template_key":"complaint_new_comment","subject":"New comment on your TrashyNeighbors complaint","body_text":"Hello {{screen_name}},\n\nA new comment was posted on your complaint:\n\nTitle: {{post_title}}\nComment by: {{comment_author}}\n\nView it here: {{post_url}}\n\n— TrashyNeighbors"}}
+{"record_type":"SEED","table":"ref_email_template","row":{"template_key":"complaint_new_update","subject":"New update on your TrashyNeighbors complaint","body_text":"Hello {{screen_name}},\n\nThere is a new update on your complaint:\n\nTitle: {{post_title}}\n\nView it here: {{post_url}}\n\n— TrashyNeighbors"}}
+
+{"record_type":"IMPORT_MANIFEST","import_key":"zip_city_state","priority":1,"source_name":"USPS City State Product (authoritative)","source_url":"https://postalpro.usps.com/address-quality/city-state-product","licensing_note":"May require USPS agreement. If unavailable, use Census Gazetteer/ZCTA fallback.","tables_target":["ref_zip_city"],"installer_behavior":"Download if credentials/approval provided; otherwise fallback to Census-based ZIP approximation.","references":["USPS City State Product describes ZIP-to-city/state validation dataset.","Census discusses USPS City State Product usage."]}
+
+{"record_type":"IMPORT_MANIFEST","import_key":"zip_city_state_fallback","priority":2,"source_name":"US Census Gazetteer / ZCTA references (public fallback)","source_url":"https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html","licensing_note":"Public. Not identical to USPS city naming; used as fallback for ZIP/city/state autofill.","tables_target":["ref_zip_city"],"installer_behavior":"Download Gazetteer/ZCTA-derived file(s) and populate ZIP->City/State approximations."}
+
+{"record_type":"IMPORT_MANIFEST","import_key":"vehicle_make_model_year","priority":1,"source_name":"NHTSA vPIC API (official vehicle product info catalog)","source_url":"https://vpic.nhtsa.dot.gov/api/","licensing_note":"Public API. Use during install to populate canonical make/model/year tables.","tables_target":["ref_vehicle_make","ref_vehicle_model","ref_vehicle_model_year"],"installer_behavior":"For each year range configured, fetch makes then models by year+make (see NHTSA dataset docs). Cache results into MariaDB and index for fast lookup."}

@@ -1,0 +1,14 @@
+{
+  "RIVIAN": {
+    "model_choices": [
+      "EDV",
+      "R1S",
+      "R1T",
+      "RCV"
+    ],
+    "orphaned_styles": [
+      "R2 4DR SUV",
+      "R2 4DR SUV"
+    ]
+  }
+}

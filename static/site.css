@@ -1,0 +1,116 @@
+:root {
+  --tn-bg: #0b1020;
+  --tn-ink: #e9ecf8;
+  --tn-muted: rgba(233, 236, 248, 0.72);
+  --tn-shell-outer: rgba(255, 255, 255, 0.10);
+  --tn-shell-inner: rgba(255, 255, 255, 0.06);
+  --tn-stroke: rgba(255, 255, 255, 0.12);
+  --tn-accent: #6d5efc;
+  --tn-accent2: #ff4fd8;
+  --tn-radius: 28px;
+}
+
+.tn-body {
+  background: radial-gradient(1200px 600px at 10% 0%, rgba(109, 94, 252, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 90% 20%, rgba(255, 79, 216, 0.16), transparent 55%),
+    var(--tn-bg);
+  color: var(--tn-ink);
+  min-height: 100vh;
+}
+
+.tn-header {
+  padding: 18px 0;
+}
+
+.tn-main {
+  padding-bottom: 48px;
+}
+
+.tn-shell {
+  position: relative;
+  border-radius: calc(var(--tn-radius) + 8px);
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(109, 94, 252, 0.55), rgba(255, 79, 216, 0.20));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+}
+
+.tn-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: calc(var(--tn-radius) + 8px);
+  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.20), transparent 50%);
+  pointer-events: none;
+}
+
+.tn-shell > * {
+  border-radius: var(--tn-radius);
+  background: linear-gradient(180deg, var(--tn-shell-outer), var(--tn-shell-inner));
+  border: 1px solid var(--tn-stroke);
+}
+
+.tn-shell-pad {
+  padding: 22px;
+}
+
+.tn-brand {
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--tn-ink);
+}
+
+.tn-brand:hover {
+  color: var(--tn-ink);
+}
+
+.tn-h1 {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.tn-h2 {
+  font-weight: 750;
+}
+
+.tn-muted {
+  color: var(--tn-muted);
+}
+
+.tn-card {
+  border-radius: calc(var(--tn-radius) + 10px);
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tn-card-inner {
+  border-radius: var(--tn-radius);
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.tn-input {
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.20);
+  color: var(--tn-ink);
+}
+
+.tn-input:focus {
+  border-color: rgba(109, 94, 252, 0.55);
+  box-shadow: 0 0 0 0.2rem rgba(109, 94, 252, 0.22);
+  background: rgba(0, 0, 0, 0.24);
+  color: var(--tn-ink);
+}
+
+.tn-btn {
+  border-radius: 999px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.tn-auth {
+  max-width: 520px;
+  margin: 0 auto;
+}

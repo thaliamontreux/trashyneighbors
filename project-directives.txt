@@ -1,0 +1,587 @@
+(MASTER DIRECTIVES — FULL SYSTEM SPECIFICATION)
+SECTION 0 — GOVERNING PRINCIPLES (NON-NEGOTIABLE)
+
+Permanence over convenience
+
+Structured data over free text
+
+Auditability over deniability
+
+Performance over storage savings
+
+Database as single source of truth
+
+No silent failures
+
+No hidden logic
+
+No optional features
+
+If any directive conflicts with another, apply precedence in this order:
+
+Performance → Auditability → Permanence → Structured Data → UX → Developer Convenience
+
+SECTION 1 — PROJECT IDENTITY
+
+Project name: TrashyNeighbors
+
+Primary domain: www.trashyneighbors.com
+
+Purpose:
+
+A permanent, public, searchable forum documenting nuisance properties and negligent neighbors
+
+Designed to expose, archive, and apply social pressure
+
+Designed to attract engagement, controversy, and discussion
+
+Audience:
+
+Homeowners
+
+Renters
+
+Prospective buyers
+
+Community members
+
+Journalists
+
+Code enforcement observers
+
+SECTION 2 — TECHNOLOGY STACK (FIXED AND FINAL)
+2.1 Languages (MANDATORY)
+
+Python (backend)
+
+JavaScript (frontend, validation, async, UX)
+
+HTML5 / CSS3
+
+2.2 Backend Framework
+
+Flask (Python)
+
+Flask blueprints or application factory allowed
+
+No Django
+
+No Node backend
+
+No SPA-only architecture
+
+2.3 Database
+
+MariaDB ONLY
+
+All data, including:
+
+images
+
+field options
+
+ZIP/city/state mappings
+
+enums
+
+logs
+
+reference data
+MUST be stored in MariaDB
+
+2.4 Frontend Architecture
+
+Server-rendered pages (Jinja2)
+
+Progressive enhancement with JavaScript
+
+No dependency on React/Vue/Angular
+
+JavaScript REQUIRED for:
+
+dynamic add/remove fields
+
+search autocomplete
+
+ZIP → City resolution
+
+live filtering
+
+like/dislike actions
+
+comment submission
+
+map interaction
+
+SECTION 3 — OPERATING SYSTEM & INSTALLATION
+
+Target OS: Bare Ubuntu
+
+All system dependencies installed via apt
+
+All Python dependencies installed via pip
+
+Installation documentation MUST include:
+
+pip install --break-system-packages
+
+
+Virtual environments allowed but not required
+
+No Docker required
+
+No Kubernetes
+
+SECTION 4 — CONFIGURATION SYSTEM
+4.1 Configuration File Rules
+
+ONLY configuration file:
+
+siteconfig.cfg
+
+
+Generated during installation
+
+Read at application startup
+
+4.2 siteconfig.cfg MUST contain:
+
+DB connection info
+
+Flask secret keys
+
+OAuth credentials
+
+Mail server credentials
+
+Image compression parameters
+
+Rate limiting thresholds
+
+Upload size limits
+
+Audit logging toggles
+
+4.3 Forbidden
+
+No .env files
+
+No secondary config files
+
+No hardcoded secrets
+
+SECTION 5 — NETWORKING & PORTS
+
+Main site listens on: port 80
+
+Admin interface listens on: port 81
+
+Admin URL path: /adminpanel
+
+Reverse proxy (Nginx) assumed
+
+Application must respect X-Forwarded-* headers
+
+SECTION 6 — AUTHENTICATION & ACCOUNT LIFECYCLE
+6.1 Allowed Login Methods
+
+Email + password
+
+Google OAuth ONLY
+
+6.2 Verification Rules
+
+Email verification is mandatory
+
+No posting before verification
+
+No commenting before verification
+
+No likes/dislikes before verification
+
+No updates before verification
+
+No edit requests before verification
+
+6.3 Account States
+
+Unverified
+
+Verified
+
+Suspended
+
+Banned
+
+Deleted (soft-delete only)
+
+SECTION 7 — USER IDENTITY & PRIVACY
+7.1 Public Identity
+
+Screen Name ONLY
+
+Screen name shown everywhere publicly
+
+7.2 Private Identity (ADMIN ONLY)
+
+Real name
+
+Home address
+
+Phone number
+
+Email address
+
+IP history
+
+Account metadata
+
+7.3 Enforcement
+
+Private data MUST NEVER render in public templates
+
+Must be protected by RBAC and backend checks
+
+SECTION 8 — ROLE-BASED ACCESS CONTROL (RBAC)
+8.1 Roles
+
+Guest
+
+Unverified User
+
+Verified User
+
+Moderator
+
+Administrator
+
+Super Administrator
+
+8.2 RBAC Enforcement Layers
+
+UI rendering
+
+Backend route guards
+
+Admin panel permissions
+
+Database-level intent checks
+
+8.3 Permission Granularity
+
+Each permission must be explicit and checkable:
+
+create_post
+
+create_update
+
+comment
+
+like
+
+dislike
+
+view_private_profile
+
+moderate_posts
+
+moderate_comments
+
+manage_users
+
+assign_roles
+
+approve_edit_requests
+
+manage_nsfw_queue
+
+view_audit_logs
+
+export_data
+
+SECTION 9 — CONTENT PERMANENCE
+9.1 Posts
+
+Cannot be edited by users
+
+Cannot be deleted by users
+
+9.2 Updates
+
+Append-only
+
+Immutable
+
+9.3 Comments
+
+Public
+
+Moderatable
+
+Logged
+
+9.4 Edits
+
+Only via Edit Request
+
+Admin approval required
+
+Fully audited
+
+SECTION 10 — MAIN PAGE (PUBLIC)
+10.1 Required Components
+
+“Am I Listed?” address search
+
+Recently listed properties
+
+Popular listings (like/dislike weighted)
+
+Trending listings
+
+State / City / ZIP filters
+
+10.2 Public Capabilities
+
+View all posts
+
+View images
+
+Search by:
+
+Address
+
+City
+
+State
+
+ZIP code
+
+SECTION 11 — LOCATION & GEOGRAPHIC DATA
+11.1 Required Fields
+
+Street Address
+
+City
+
+State
+
+ZIP Code
+
+Latitude
+
+Longitude
+
+11.2 ZIP Intelligence
+
+ZIP → City → State stored in MariaDB
+
+ZIP entry auto-fills:
+
+State always
+
+City if single-city ZIP
+
+City selection if multi-city ZIP
+
+SECTION 12 — POST DATA MODEL (STRICT)
+12.1 Required
+
+Title
+
+Story text
+
+≥1 image
+
+Location data
+
+≥1 name
+
+12.2 Names
+
+Up to 10
+
+Structured rows
+
+Immutable
+
+12.3 Vehicles (Up to 10)
+
+Required:
+
+License plate
+
+Plate region
+
+Make
+
+Model
+
+Color
+
+Type
+
+Condition
+
+Optional:
+
+Year
+
+SECTION 13 — NUISANCE DATA
+13.1 Controlled Lists
+
+Nuisance categories
+
+Nuisance items
+
+Vehicle types
+
+Vehicle colors
+
+Vehicle conditions
+
+Vehicle makes
+
+13.2 fielddata.txt
+
+Seed/import file ONLY
+
+Used during install
+
+Loaded into MariaDB
+
+Never read at runtime
+
+SECTION 14 — IMAGE HANDLING
+14.1 Storage
+
+Images stored in MariaDB
+
+Highly compressed
+
+Indexed for fast retrieval
+
+14.2 Moderation
+
+Local-only NSFW detection
+
+Sexual content blocked
+
+EXIF GPS extraction mandatory
+
+All actions logged
+
+SECTION 15 — INTERACTION SYSTEM
+15.1 Likes / Dislikes
+
+One per user per post
+
+Used for ranking
+
+Public counts
+
+15.2 Comments
+
+Verified users only
+
+Moderatable
+
+Logged
+
+SECTION 16 — USER PROFILES
+
+Screen name
+
+Posts
+
+Optional embedded live stream
+
+Embedded only (no rehosting)
+
+Sanitized URLs
+
+SECTION 17 — ADMIN PANEL (/adminpanel :81)
+
+Must include:
+
+Dashboard
+
+User management
+
+Private profile access
+
+Role assignment
+
+Post moderation
+
+Comment moderation
+
+Edit request queue
+
+NSFW review queue
+
+Audit logs
+
+Data export
+
+SECTION 18 — AUDIT LOGGING (IMMUTABLE)
+
+Log ALL:
+
+Account events
+
+Verification
+
+Posts
+
+Updates
+
+Comments
+
+Likes/dislikes
+
+Edit requests
+
+Admin actions
+
+NSFW blocks
+
+SECTION 19 — PERFORMANCE & SCALE
+
+Optimized for:
+
+High read concurrency
+
+Image-heavy traffic
+
+Required DB indexes:
+
+ZIP
+
+City
+
+State
+
+Post score
+
+Timestamps
+
+JavaScript used to reduce page reloads
+
+SECTION 20 — REQUIRED OUTPUTS
+
+The system MUST produce:
+
+Full Flask source
+
+Full MariaDB schema
+
+fielddata.txt importer
+
+siteconfig.cfg generator
+
+Admin bootstrap tool
+
+Full documentation
+
+END OF MASTER DIRECTIVES

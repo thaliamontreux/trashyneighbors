@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}TrashyNeighbors{% endblock %}
+
+{% block content %}
+  <div class="tn-shell tn-shell-pad">
+    <div class="row g-4">
+      <div class="col-12 col-lg-7">
+        <h1 class="tn-h1">Am I Listed?</h1>
+        <div class="tn-muted mb-3">Search by address / city / state / ZIP.</div>
+
+        <div class="tn-card">
+          <div class="tn-card-inner">
+            <form method="get" action="#">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label">Street Address</label>
+                  <input class="form-control tn-input" name="street" autocomplete="street-address">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">ZIP</label>
+                  <input class="form-control tn-input" name="zip" id="zipInput" maxlength="5" inputmode="numeric" autocomplete="postal-code">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">City</label>
+                  <input class="form-control tn-input" name="city" id="cityInput" autocomplete="address-level2">
+                </div>
+                <div class="col-12 col-md-4">
+                  <label class="form-label">State</label>
+                  <input class="form-control tn-input" name="state" id="stateInput" maxlength="2" autocomplete="address-level1">
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary tn-btn" type="submit">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5">
+        <h2 class="tn-h2">Trending</h2>
+        <div class="tn-shell tn-shell-pad">
+          <div class="tn-muted">Coming next: newest posts, popular, and filters (ZIP intelligence).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
